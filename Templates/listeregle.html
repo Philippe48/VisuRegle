@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Regles</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+  <h1> Liste des regles </h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nom </th>
+          <th>Type </th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for regle in regles %}
+      <tr>
+          <td> {{ regle.nom }} </td>
+          <td> {{ regle.typeregle }} </td>
+      </tr>
+      {% endfor %}
+      </tbody>
+
+    </table>
+</div>
+
+
+{% endblock content %}

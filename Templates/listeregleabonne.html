@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Regle Abonnes</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+  <h1> Liste des regles abonné </h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Code </th>
+          <th>Nom </th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for regleabonne in regleabonnes %}
+
+      <tr>
+          <td> {{ regleabonne.id }} </td>
+          <td> {{ regleabonne.nom }} </td>
+      </tr>
+      {% endfor %}
+      </tbody>
+
+    </table>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Abonnes</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+  <h1> Liste des abonnés </h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Code </th>
+          <th>Nom </th>
+          <th>Action </th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for abonne in abonnes %}
+      <tr>
+          <td> {{ abonne.codeabonne }} </td>
+          <td> {{ abonne.nom }} </td>
+          <td>
+              <form action="{% url 'regle' abonne.id %}" style="display: inline-block">
+                <button class="btn btn-success">regle</button>
+              </form>
+              </form>
+
+          </td>
+
+      </tr>
+      {% endfor %}
+      </tbody>
+
+    </table>
+</div>
+
+
+{% endblock content %}
